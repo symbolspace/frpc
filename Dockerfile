@@ -20,4 +20,4 @@ RUN set -x && \
 
 VOLUME /frp
 
-CMD /frpc -c /frp/frpc.ini
+CMD cat /frp/frpc.ini|base64 -d>/tmp/frpc.ini && /frpc -c /tmp/frpc.ini

@@ -7,8 +7,9 @@ ENV TZ=Asia/Shanghai
 WORKDIR /
 ENV FRP_VERSION 0.40.0
 
+# wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_amd64.tar.gz && \ 
 RUN set -x && \
-	wget --no-check-certificate https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_amd64.tar.gz && \ 
+	wget --no-check-certificate https://mirror-symbol.q32.top:8443/staticfile/software/github/releases/frp_${FRP_VERSION}_linux_amd64.tar.gz && \ 
 	tar xzf frp_${FRP_VERSION}_linux_amd64.tar.gz && \
 	cd frp_${FRP_VERSION}_linux_amd64 && \
 	mkdir /frp && \
